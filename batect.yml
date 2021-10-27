@@ -1,21 +1,15 @@
 config_variables:
   project_root:
     description: Project root directory
+    # default: <{batect.project_directory} /!\ DON'T WORK! No interpolation is allowed as default.
   project_name:
     description: Project Name
   project_version:
     description: Project version
     default: 0.0.0
-
-
-
-containers:
-  ci:
-    image: alpine:3.11.3
-    volumes:
-      - local: ./tasks/scripts
-        container: /opt/tsklabs/self/scripts
-        options: ro
+  project_desc:
+    description: Project description
+    default: ""
 
 
 include:

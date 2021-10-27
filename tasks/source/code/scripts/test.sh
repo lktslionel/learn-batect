@@ -8,6 +8,7 @@ echo "-- vars"
 
 cat <<META
 Project Name: $PROJECT_NAME
-Project Versioin: $PROJECT_VERSION
+Project Version: $PROJECT_VERSION
+Project Root: $PROJECT_ROOT
 META
 

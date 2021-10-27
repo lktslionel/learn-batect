@@ -2,4 +2,4 @@
 
 project_root="$( cd "$(dirname "${BASH_SOURCE[2]}")" ; pwd -P )"
 
-${project_root}/bin/batect -f ${project_root}/batect.yml --config-vars-file ${project_root}/.project.yml --config-var project_root=${project_root} "$@"
+${project_root}/bin/batect -f ${project_root}/batect.yml --config-vars-file ${project_root}/project.yml "$@"
