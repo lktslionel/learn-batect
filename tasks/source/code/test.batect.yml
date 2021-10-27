@@ -36,4 +36,5 @@ tasks:
       environment:
         TEST_VAR: <{test_var}
         NAMESPACE_TEST_VAR: <{namespace.test.var}
+        # TASKS_DIR: <{tasks_dir}
 

@@ -1,3 +1,14 @@
+# tasks_dir: <{batect.project_directory}/tasks /!\ NOT ALLOWED! ONLY project_name is allowed.
+project_name: learn-batect # see below
+
+# The project name must be a valid Docker reference: 
+# it must contain only lowercase letters, digits, dashes (-), 
+# single consecutive periods (.) or one or two consecutive 
+# underscores (_), and must not start or end with dashes, 
+# periods or underscores.
+
+
+
 config_variables:
   project_root:
     description: Project root directory
