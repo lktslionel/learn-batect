@@ -1,0 +1,23 @@
+config_variables:
+  project_root:
+    description: Project root directory
+  project_name:
+    description: Project Name
+  project_version:
+    description: Project version
+    default: 0.0.0
+
+
+
+containers:
+  ci:
+    image: alpine:3.11.3
+    volumes:
+      - local: ./tasks/scripts
+        container: /opt/tsklabs/self/scripts
+        options: ro
+
+
+include:
+  - tasks/source/code/test.batect.yml
+  

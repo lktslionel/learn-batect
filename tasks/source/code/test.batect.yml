@@ -1,0 +1,18 @@
+containers:
+  ci-test:
+    image: alpine:3.11.3
+    volumes:
+      - local: <{project_root}/tasks/source/code/scripts
+        container: /opt/tsklabs/self/scripts
+        options: ro
+
+tasks:
+  source:code:test:
+    description: Runing unit test
+    group: source
+    run:
+      container: ci-test
+      command: /opt/tsklabs/self/scripts/test.sh
+      environment:
+        PROJECT_NAME: <{project_name}
+        PROJECT_VERSION: <{project_version}
