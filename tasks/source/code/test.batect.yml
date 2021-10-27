@@ -1,3 +1,11 @@
+config_variables:
+  test_var:
+    description: Test var
+    default: worked
+  namespace.test.var:
+    description: Namespaced test var
+    default: namespaced test var works
+
 containers:
   ci-test:
     image: alpine:3.11.3
@@ -17,3 +25,15 @@ tasks:
         PROJECT_NAME: <{project_name}
         PROJECT_VERSION: <{project_version}
         PROJECT_ROOT: <{batect.project_directory}
+        TEST_VAR: <{test_var}
+  source:vars:
+    description: Show vars
+    group: source
+    run:
+      # command: echo <{test_var} /!\ NOT ALLOWED! interpolation is allowed on for expression. See: https://batect.dev/docs/reference/config/expressions
+      command: /opt/tsklabs/self/scripts/debug.sh
+      container: ci-test
+      environment:
+        TEST_VAR: <{test_var}
+        NAMESPACE_TEST_VAR: <{namespace.test.var}
+

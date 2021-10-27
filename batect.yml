@@ -10,7 +10,18 @@ config_variables:
   project_desc:
     description: Project description
     default: ""
+  # test_var: /!\ NOT ALLOWED TO DEFINE VARS IN MANY FILES — Please namespaced your vars
+  #   description: Override test_var from root
+  #   default: "worked with override"
 
+
+tasks:
+  debug:vars:
+    description: Show vars
+    group: debug
+    run:
+      command: echo <{test_var}
+      container: ci-test
 
 include:
   - tasks/source/code/test.batect.yml
